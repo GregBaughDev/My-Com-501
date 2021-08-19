@@ -1,4 +1,8 @@
-/* Variables and global styles */
+/**************************** 
+*
+* @Variables and global styles 
+*
+*****************************/
 :root {
     --open-sans-ff: 'Open Sans', sans-serif;
     --roboto-ff: 'Roboto', sans-serif;
@@ -14,8 +18,12 @@ body {
     font-family: var(--open-sans-ff);
 }
 
-/* Header styles */
-header {
+/**************************** 
+*
+* @Header and footer styles 
+*
+*****************************/
+header, footer {
     background-color: #F6F6F6;
 }
 
@@ -39,7 +47,18 @@ div > nav {
     font-weight: 700;
 }
 
-/* Home page */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vh 2vw;
+}
+
+/****************************
+*
+* @Home page 
+*
+****************************/
 #hero {
     width: 100vw;
     height: 80vh;
@@ -63,6 +82,29 @@ div > nav {
     text-align: center;
 }
 
+/* Featured product */
+#featured-prod {
+    display: flex;
+    width: 80vw;
+    height: 50vh;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 5vh 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#featured-prod img {
+    object-fit: cover;
+    width: 80%;
+    max-height: 80%;
+}
+
+/****************************
+*
+* @Media queries
+*
+****************************/
 @media (max-width: 900px) {
     /* Home Page - media queries */
     #hero > h1 {
