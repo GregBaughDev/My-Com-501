@@ -15,7 +15,28 @@
 }
 
 body {
+    font-family: var(--roboto-ff);
+}
+
+.flex {
+    display: flex;
+    width: 80vw;
+    align-items: center;
+    margin: 2vh auto;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--open-sans-ff);
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+.header-container {
+    margin: 2vh 0;
+    text-align: center;
 }
 
 /**************************** 
@@ -52,6 +73,20 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding: 2vh 2vw;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+a > img {
+    padding: 0;
+    display: flex;
 }
 
 /****************************

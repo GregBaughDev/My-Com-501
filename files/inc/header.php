@@ -8,17 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
     <link href="/Diploma/501/www/public/css/styles.css" rel="stylesheet">
+
+    <!-- add conditionals for the stylesheets -->
+    <link href="/Diploma/501/www/public/css/product.css" rel="stylesheet">
+    <link href="/Diploma/501/www/public/css/about.css" rel="stylesheet">
+    <link href="/Diploma/501/www/public/css/contact.css" rel="stylesheet">
     <title>My-Com</title>
 </head>
 <body>
 <header>
     <div>
-        <img src="/Diploma/501/www/public/img/logo.svg" alt="My Com logo">
+        <a href="./index.php"><img src="/Diploma/501/www/public/img/logo.svg" alt="My Com logo"></a>
         <nav>
-            <a>Products</a>
-            <a>About</a>
-            <a>Contact</a>
-            <a>Staff Area</a>
+            <a href="./products.php">Products</a>
+            <a href="./about.php">About</a>
+            <a href="./contact.php">Contact</a>
+            <a href="./staff.php">Staff Area</a>
         </nav>
     </div>
 </header>

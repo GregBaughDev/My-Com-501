@@ -1,0 +1,31 @@
+/****************************
+*
+* @Product page
+*
+****************************/
+.product-row {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.product-placeholder {
+    height: 200px;
+    width: 30%;
+    background-color: #927DE8;
+}
+
+/****************************
+*
+* @Media queries
+*
+****************************/
+@media (max-width: 700px) {
+    .product-row {
+        flex-direction: column;
+    }
+    .product-placeholder {
+        height: 100px;
+        width: 90%;
+     }
+}

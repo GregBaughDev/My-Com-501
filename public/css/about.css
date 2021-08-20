@@ -1,0 +1,12 @@
+/****************************
+*
+* @About page
+*
+****************************/
+.paragraph-text {
+    width: 50%;
+}
+
+.paragraph-text > h2 {
+    text-align: center;
+}
