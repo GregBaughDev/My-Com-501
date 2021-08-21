@@ -6,7 +6,7 @@
     <div class="header-container">
         <h1>Contact Us</h1>
     </div>
-    <section class="paragraph-text">
+    <section class="form-container">
         <h2>You can contact us using the below form and we will get back to you shortly</h2>
         <form>
             <label for="name">Name: *</label>

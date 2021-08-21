@@ -3,11 +3,11 @@
 * @Contact page
 *
 ****************************/
-.paragraph-text > form {
+.form-container > form {
     margin: 2vh 0;
 }
 
-.paragraph-text > form input {
+.form-container > form input {
     width: 100%;
     height: 3vh;
     padding: 2vh 1vw;
@@ -16,7 +16,7 @@
     border: 2px solid #927DE8;
 }
 
-.paragraph-text > form textarea {
+.form-container > form textarea {
     width: 100%;
     height: 10vh;
     margin: 1vh 0;
@@ -27,7 +27,7 @@
     border: 2px solid #927DE8;
 }
 
-.paragraph-text > form button {
+.form-container > form button {
     width: 50%;
     padding: 1vh 0;
     margin: 1vh 25% 1vh 25%;
@@ -36,8 +36,9 @@
     color: #2F0AC2;
     border: 2px solid #927DE8;
     font-size: 1rem;
+    border-radius: 5px;
 }
 
-.paragraph-text > h3 {
+.form-container > h3, .form-container > h2 {
     text-align: center;
 }

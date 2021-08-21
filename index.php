@@ -11,7 +11,6 @@
     <h2>Product Name</h2>
     <img src="./public/img/image1.jpg" alt="Inside of a computer with hard drive and fan">
     <p>Product description</p>
-
 </section>
 
 <?php

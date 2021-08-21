@@ -14,8 +14,19 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: var(--roboto-ff);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
 }
 
 .flex {
@@ -73,6 +84,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding: 2vh 2vw;
+    flex-shrink: 0;
 }
 
 nav a {
