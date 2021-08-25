@@ -15,6 +15,23 @@
     background-color: #927DE8;
 }
 
+.grid-main {
+    display: grid;
+}
+
+.grid {
+    display: grid;
+    grid: repeat(3, 30%);
+}
+
+.grid-product {
+    width: 100%;
+}
+
+.product-main {
+    width: 80%;
+}
+
 /****************************
 *
 * @Media queries
