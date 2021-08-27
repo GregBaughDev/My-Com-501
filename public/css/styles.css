@@ -37,6 +37,16 @@ body {
     flex-direction: column;
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--open-sans-ff);
 }
