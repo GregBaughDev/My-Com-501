@@ -29,6 +29,14 @@
     width: 25%;
 }
 
+.product-search select {
+    width: 30%;
+}
+
+.product-search form {
+    margin: 1vh 0;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 45%);

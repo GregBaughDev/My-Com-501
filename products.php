@@ -18,22 +18,19 @@
         <h1>Products</h1>
         <h2>Current products</h2>
     </div>
-    <div class="flex-row product-search">
-        <div>
-            <form action="" type="GET">
-                <label for="search">Item Search:</label>
-                <input name="search" id="search" type="text">
-                <input type="submit" value="Search">
-            </form>
-        </div>
-        <div>
-            <label for="">Filter Products:</label>
+    <div class="flex-column product-search">
+        <form action="" type="GET">
             <select name="filter" id="filter">
                 <option value="">Filter Products</option>
                 <option value="current">Current Stock</option>
                 <option value="previous">Previous Stock</option>
             </select>
-        </div>
+        </form>
+        <form action="" type="GET">
+            <label for="search">Item Search:</label>
+            <input name="search" id="search" type="text">
+            <input type="submit" value="Search">
+        </form>
     </div>
     <div class="product-main">
         <div class="grid">

@@ -13,6 +13,7 @@
     <link href="/Diploma/501/www/public/css/product.css" rel="stylesheet">
     <link href="/Diploma/501/www/public/css/about.css" rel="stylesheet">
     <link href="/Diploma/501/www/public/css/contact.css" rel="stylesheet">
+    <link href="/Diploma/501/www/public/css/sitemap.css" rel="stylesheet">
     <title>My-Com</title>
 </head>
 <body>

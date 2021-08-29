@@ -7,6 +7,29 @@
     width: 50%;
 }
 
-.paragraph-text > h2 {
+h2, h3 {
     text-align: center;
+    margin: 1vh 0;
+}
+
+.tbl {
+    text-align: center;
+    width: 300px;
+    padding: 1vh 0;
+}
+
+thead {
+    font-size: 1.25rem;
+}
+
+td {
+    width: 20%;
+}
+
+tr {
+    margin: 1vh 0;
+}
+
+section {
+    margin: 1vh 0;
 }
