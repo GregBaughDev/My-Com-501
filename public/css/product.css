@@ -11,7 +11,7 @@
 
 .product-search input[type=text] {
     padding: 1vh 1vw;
-    width: 60%;
+    width: 30%;
     border: solid 3px #927DE8;
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
@@ -26,11 +26,11 @@
 }
 
 .product-search input[type=submit]{
-    width: 25%;
+    width: 15%;
 }
 
 .product-search select {
-    width: 30%;
+    width: 20%;
 }
 
 .product-search form {
@@ -86,6 +86,13 @@
 
 .product-information-bttm h6 {
     font-size: 1rem;
+}
+
+.prod-links {
+    width: 80%;
+    justify-content: space-around;
+    margin: 0 auto;
+    background-color: #F6F6F6;
 }
 
 /****************************
