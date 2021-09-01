@@ -10,9 +10,29 @@
 -->
 <?php
     require_once('./files/inc/header.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
+
+    // TO DO: Invalid id entered, redirect to home page
+
+    foreach($retrieveItems as $item){
+        if($item["product_id"] == $_GET["id"]){
+            $currItem = $item;
+        }
+    }
 ?>  
 
-    <h1><?php echo $_GET["id"] ?></h1>
+<!-- TO DO: Image gallery - scroll -->
+<section class="flex">
+    <div class="header-container">
+        <h1><?php echo $currItem['name'] ?></h1>
+        <h2><?php echo $currItem['manufacturer'] ?></h2>
+        <img class="view-img" src="./public/img/test.jpg" alt="Computer monitor">
+        <h3>Price - $<?php echo $currItem['price'] ?></h3>
+        <h4><?php echo $currItem['status'] ?></h4>
+        <h5><?php echo $currItem['condition'] ?></h5>
+        <p><?php echo $currItem['description'] ?></p>
+    </div>
+</section>
 
 <?php
     require_once('./files/inc/footer.php');

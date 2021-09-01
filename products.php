@@ -12,6 +12,8 @@
     require_once('./files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
 
+    // TO DO - Move below functionality into a seperate file
+    // All products, Current products and previous products display
     $filterProducts = [];
 
     if(isset($_GET["curr"]) || isset($_GET["prev"])){
@@ -25,6 +27,29 @@
     } else {
         $filterProducts = $retrieveItems;
     }
+
+    // TO DO - Lower case product names when searching and retrieving information from DB
+    // WIP - Search function
+    if(isset($_GET['search'])){
+        $searchTerm = $_GET['search'];
+    }
+    if(isset($_GET['filter'])){
+        $filterTerm = $_GET['filter'];
+    }
+    // Use $retrieveItems and search through those items?
+    if(isset($_GET['search']) && isset($_GET['filter'])){
+        foreach($retrieveItems as $item){
+            // TO DO: manufacturer search isn't working
+            echo strpos(strtolower($item['manufacturer']), strtolower($_GET['search']));
+            if(strpos(strtolower($item['name']), strtolower($_GET['search'])) || 
+                strpos(strtolower($item['manufacturer']), strtolower($_GET['search'])) || 
+                strpos(strtolower($item['description']), strtolower($_GET['search']))) {
+                    echo "TRUE";
+            }
+            // PUSH TO filterProducts array
+        }
+    }
+
 ?>  
 
 <section class="flex">

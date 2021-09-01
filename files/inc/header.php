@@ -9,11 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
     <link href="/Diploma/501/www/public/css/styles.css" rel="stylesheet">
 
-    <!-- add conditionals for the stylesheets -->
+    <!-- TO DO: add conditionals for the stylesheets -->
     <link href="/Diploma/501/www/public/css/product.css" rel="stylesheet">
     <link href="/Diploma/501/www/public/css/about.css" rel="stylesheet">
     <link href="/Diploma/501/www/public/css/contact.css" rel="stylesheet">
     <link href="/Diploma/501/www/public/css/sitemap.css" rel="stylesheet">
+    <link href="/Diploma/501/www/public/css/view.css" rel="stylesheet">
     <title>My-Com</title>
 </head>
 <body>
