@@ -20,10 +20,10 @@
         <ul>
             <li><a href="./index.php">Home</a></li>
             <!-- add product links in -->
-            <li>Products
+            <li><a href="./products.php">Products</a>
                 <ul>
-                    <li>Current Products</li>
-                    <li>Previous Products</li>
+                    <li><a href="./products.php?curr">Current Products</a></li>
+                    <li><a href="./products.php?prev">Previous Products</a></li>
                 </ul>
             </li>
             <li><a href="./about.php">About</a></li>

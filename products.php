@@ -29,27 +29,19 @@
     }
 
     // TO DO - Lower case product names when searching and retrieving information from DB
-    // WIP - Search function
-    if(isset($_GET['search'])){
-        $searchTerm = $_GET['search'];
-    }
-    if(isset($_GET['filter'])){
-        $filterTerm = $_GET['filter'];
-    }
-    // Use $retrieveItems and search through those items?
-    if(isset($_GET['search']) && isset($_GET['filter'])){
+    // Search function
+    if(isset($_GET['search']) && $_GET['search'] !== '' && isset($_GET['filter'])){
+        $filterProducts = [];
         foreach($retrieveItems as $item){
-            // TO DO: manufacturer search isn't working
-            echo strpos(strtolower($item['manufacturer']), strtolower($_GET['search']));
-            if(strpos(strtolower($item['name']), strtolower($_GET['search'])) || 
-                strpos(strtolower($item['manufacturer']), strtolower($_GET['search'])) || 
-                strpos(strtolower($item['description']), strtolower($_GET['search']))) {
-                    echo "TRUE";
+            if($_GET['filter'] === $item['status'] || $_GET['filter'] === 'all'){
+                if(strpos(strtolower($item['name']), strtolower($_GET['search'])) !== false || 
+                    strpos(strtolower($item['manufacturer']), strtolower($_GET['search'])) !== false || 
+                    strpos(strtolower($item['description']), strtolower($_GET['search'])) !== false) {
+                        array_push($filterProducts, $item);
+                }
             }
-            // PUSH TO filterProducts array
         }
     }
-
 ?>  
 
 <section class="flex">
@@ -81,31 +73,35 @@
             <input name="search" id="search" type="text">
             <select name="filter" id="filter">
                 <option value="all">All Stock</option>
-                <option value="current">Current Stock</option>
-                <option value="previous">Previous Stock</option>
+                <option value="In Stock">Current Stock</option>
+                <option value="Previous Item">Previous Stock</option>
             </select>
             <input type="submit" value="Search">
         </form>
     </div>
     <div class="product-main">
-        <div class="grid">
-            <?php for($i = 0; $i < count($filterProducts); $i++) { ?>
-                <div class="flex-product">
-                    <h2><a href="view.php?id=<?php echo $filterProducts[$i]["product_id"] ?>"><?php echo $filterProducts[$i]['name'] ?></a></h2>
-                    <div class="flex-row product-information">
-                        <img src="./public/img/test.jpg" alt="Computer monitor">
-                        <div class="flex-column product-information-rt">
-                            <h3>$<?php echo $filterProducts[$i]['price'] ?></h3>
-                            <h4><?php echo $filterProducts[$i]['status'] ?></h4>
-                            <h5><?php echo $filterProducts[$i]['condition'] ?></h5>
+            <?php if(count($filterProducts) < 1) { ?>
+                <h2>No products found</h2>
+            <?php } else { ?>
+                <div class="grid">
+                    <?php for($i = 0; $i < count($filterProducts); $i++) { ?>
+                        <div class="flex-product">
+                            <h2><a href="view.php?id=<?php echo $filterProducts[$i]["product_id"] ?>"><?php echo $filterProducts[$i]['name'] ?></a></h2>
+                            <div class="flex-row product-information">
+                                <img src="./public/img/test.jpg" alt="Computer monitor">
+                                <div class="flex-column product-information-rt">
+                                    <h3>$<?php echo $filterProducts[$i]['price'] ?></h3>
+                                    <h4><?php echo $filterProducts[$i]['status'] ?></h4>
+                                    <h5><?php echo $filterProducts[$i]['condition'] ?></h5>
+                                </div>
+                            </div>
+                            <p><?php echo $filterProducts[$i]['description'] ?></p>
+                            <div class="flex-row product-information-bttm">
+                                <h6>Category: <?php echo $filterProducts[$i]['category'] ?></h6>
+                                <h6>Brand: <?php echo $filterProducts[$i]['manufacturer'] ?></h6>
+                            </div>
                         </div>
-                    </div>
-                    <p><?php echo $filterProducts[$i]['description'] ?></p>
-                    <div class="flex-row product-information-bttm">
-                        <h6>Category: <?php echo $filterProducts[$i]['category'] ?></h6>
-                        <h6>Brand: <?php echo $filterProducts[$i]['manufacturer'] ?></h6>
-                    </div>
-                </div>
+                <?php } ?>
             <?php } ?>
         </div>
     </div>
