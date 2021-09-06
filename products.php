@@ -42,6 +42,16 @@
             }
         }
     }
+
+    // Category filter
+    if(isset($_GET['category'])){
+        $filterProducts = [];
+        foreach($retrieveItems as $item){
+            if($_GET['category'] == $item['category']){
+                array_push($filterProducts, $item);
+            }
+        }
+    }
 ?>  
 
 <section class="flex">
@@ -77,6 +87,16 @@
                 <option value="Previous Item">Previous Stock</option>
             </select>
             <input type="submit" value="Search">
+        </form>
+        <form action="" type="GET">
+            <label for="category">Filter by category:</label>
+            <select name="category" id="category">
+                <option value="" disabled>--Select a category--</option>
+                <?php foreach($retrieveItems as $item) { ?>
+                    <option value="<?php echo $item["category"] ?>"><?php echo $item["category"] ?></option>
+                <?php } ?>
+            </select>
+            <input type="submit" value="Filter">
         </form>
     </div>
     <div class="product-main">

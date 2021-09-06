@@ -31,6 +31,16 @@
         </form>
         <h3>* Required</h3>
     </section>
+    <section>
+        <h2>Contact Information</h2>
+        <h3>Email: info@my-com.com.au</h3>
+        <h3>Phone: (03) 2345 6789</h3>
+    </section>
+    <section>
+        <h2>Location</h2>
+        <h3>447-457 Victoria St | Richmond | VIC | 3121</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3395.592319810075!2d144.9993234260693!3d-37.80985503092955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6422db00d8aed%3A0x62c6709a8c8f2553!2sCentre%20Com%20Richmond!5e0!3m2!1sen!2sau!4v1630201615801!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
 </section>
 
 <?php
