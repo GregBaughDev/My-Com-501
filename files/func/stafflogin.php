@@ -14,6 +14,11 @@
         $pass = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
     }
 
+    if($user == '' || $pass == ''){
+        array_push($errors, "All fields must be completed");
+        header("Location: ../../staff.php");
+    }
+
     try {
         $usernameQueryString = "SELECT * FROM staff WHERE username = :username AND password = :password";
         $usernameQuery = $conn->prepare($usernameQueryString);

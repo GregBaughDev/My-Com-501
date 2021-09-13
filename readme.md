@@ -1,8 +1,8 @@
 # My-Com Shop page (Diploma project)
 
 To Do:  
-[] Image gallery on products (JS)  
-[] Validations
+[] Image uploads  
+[] Image gallery on products (JS)    
 [] Staff area  
-    [] Staff area CRUD on products  
-    [] Create 'staff' table and users to test different validations work
+    [] Staff area CRUD on products    
+    [] Create 'staff' table and users to test different validations work  

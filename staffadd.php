@@ -19,11 +19,7 @@
 
 <section class="flex">
     <div class="header-container">
-        <h1>Dashboard</h1>
-    </div>
-    <div>
-        <h3><a href="./staffadd.php">Add Product</a></h3>
-        <h3><a href="./staffedit.php">Edit Products</a></h3>
+        <h1>Add page</h1>
     </div>
 </section>
 

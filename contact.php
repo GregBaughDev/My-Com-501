@@ -10,6 +10,7 @@
 -->
 <?php
     require_once('./files/inc/header.php');
+    session_start();
 ?>  
 
 <section class="flex">
@@ -18,7 +19,13 @@
     </div>
     <section class="form-container">
         <h2>You can contact us using the below form and we will get back to you shortly</h2>
-        <form>
+        <?php if(isset($_SESSION['errors'])) {
+            foreach($_SESSION['errors'] as $error) { ?>
+                <h3 class="log-err"><?php echo $error ?></h3>
+            <?php }
+            unset($_SESSION['errors']);
+        } ?>
+        <form action="./files/func/contact.php" method="POST">
             <label for="name">Name: *</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
             <label for="email">Email: *</label>
