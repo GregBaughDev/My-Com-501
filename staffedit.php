@@ -11,7 +11,6 @@
 <?php
     require_once('./files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
-    session_start();
     
     if(!$_SESSION['authenticate']){
         header("Location: ./staff.php");
@@ -22,29 +21,27 @@
     <div class="header-container">
         <h1>Edit page</h1>
     </div>
-    <div>
+    <div class="edit-table">
         <table>
             <thead>
-                <tr>Name</tr>
-                <tr>Description</tr>
-                <tr>Condition</tr>
-                <tr>Category</tr>
-                <tr>Status</tr>
-                <tr>Price</tr>
-                <tr>Edit</tr>
-                <tr>Delete</tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Condition</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Price</th>
+                    <th>Edit</th>
+                </tr>
             </thead>
             <tbody>
                 <?php for($i = 0; $i < count($retrieveItems); $i++){ ?>
                     <tr>
                         <td><?php echo $retrieveItems[$i]["name"] ?></td>
-                        <td><?php echo $retrieveItems[$i]["description"] ?></td>
                         <td><?php echo $retrieveItems[$i]["condition"] ?></td>
+                        <td><?php echo $retrieveItems[$i]["category"] ?></td>
                         <td><?php echo $retrieveItems[$i]["status"] ?></td>
                         <td>$<?php echo $retrieveItems[$i]["price"] ?></td>
-                        <!-- TO DO - Link to edit and delete page -->
-                        <td>Edit</td>
-                        <td>Delete</td>
+                        <td><a href="./staffeditview.php?id=<?php echo $retrieveItems[$i]["product_id"] ?>">Edit</a></td>
                     </tr>
                 <?php } ?>
             </tbody>

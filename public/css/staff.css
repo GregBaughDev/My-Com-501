@@ -2,3 +2,21 @@
     color: #E5A01A;
     text-align: center;
 }
+
+.edit-table {
+    width: 100%;    
+}
+
+.edit-table table {
+    table-layout: auto;
+    text-align: center;
+}
+
+.edit-table thead {
+    width: 100%;
+    background-color: #F6F6F6;
+}
+
+.edit-table th, .edit-table td {
+    padding: 1vh 1vw;
+}

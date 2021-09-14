@@ -10,7 +10,6 @@
 -->
 <?php
     require_once('./files/inc/header.php');
-    session_start();
 ?>  
 
 <section class="flex">

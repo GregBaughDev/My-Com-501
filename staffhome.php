@@ -10,7 +10,6 @@
 -->
 <?php
     require_once('./files/inc/header.php');
-    session_start();
     
     if(!$_SESSION['authenticate']){
         header("Location: ./staff.php");
