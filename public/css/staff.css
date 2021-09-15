@@ -1,3 +1,9 @@
+/****************************
+*
+* @Staff area
+*
+****************************/
+/* Login and dashboard */
 .log-err {
     color: #E5A01A;
     text-align: center;
@@ -19,4 +25,9 @@
 
 .edit-table th, .edit-table td {
     padding: 1vh 1vw;
+}
+
+/* Edit page */
+.form-edit {
+    margin: 1vh 0;
 }

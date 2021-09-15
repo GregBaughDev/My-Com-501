@@ -9,7 +9,7 @@
     margin: 2vh 0;
 }
 
-.product-search input[type=text] {
+.product-search input[type=text], form input[type=text] {
     padding: 1vh 1vw;
     width: 30%;
     border: solid 3px #927DE8;
@@ -17,7 +17,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.product-search input[type=submit], .product-search select {
+.product-search input[type=submit], .product-search select, form select {
     padding: 1vh 1vw;
     border: solid 2px #927DE8;
     background: none;

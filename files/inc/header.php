@@ -30,7 +30,7 @@
             <a href="./products.php">Products</a>
             <a href="./about.php">About</a>
             <a href="./contact.php">Contact</a>
-            <?php if($_SESSION['authenticate']) { ?>
+            <?php if(isset($_SESSION['authenticate'])) { ?>
                 <a href="./staffhome.php">Staff Area</a>
             <?php } else { ?>
                 <a href="./staff.php">Staff Area</a>
