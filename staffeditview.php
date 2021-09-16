@@ -26,14 +26,14 @@
         <h1>Edit - <?php echo $item[0]['name'] ?></h1>
     </div>
     <section class="form-container">
-        <form action="./files/func/handleedit.php" method="POST">
+        <form action="./files/func/handleedit.php?id=<?php echo $item[0]['product_id'] ?>" method="POST">
             <label for="name">Product name</label>
                 <input type="text" name="name" id="name" value="<?php echo $item[0]['name']?>">
             <div class="form-edit">
                 <label for="manufacturer">Manufacturer</label>
                     <select name="manufacturer">
                         <?php foreach($manuList as $man) { ?>
-                            <option value="<?php echo $man['manufacturer']?>" <?php if($item[0]['manufacturer'] == $man['manufacturer']) { ?> selected <?php } ?>><?php echo $man['manufacturer'] ?></option>
+                            <option value="<?php echo $man['manufacturer_id']?>" <?php if($item[0]['manufacturer'] == $man['manufacturer']) { ?> selected <?php } ?>><?php echo $man['manufacturer'] ?></option>
                         <?php } ?>
                     </select>
             </div>
@@ -57,7 +57,7 @@
                 <label for="category">Category</label>
                     <select name="category">
                     <?php foreach($catList as $cat) { ?>
-                        <option value="<?php echo $cat['category']?>" <?php if($item[0]['category'] == $cat['category']) { ?> selected <?php } ?>><?php echo $cat['category']?></option>
+                        <option value="<?php echo $cat['category_id']?>" <?php if($item[0]['category'] == $cat['category']) { ?> selected <?php } ?>><?php echo $cat['category']?></option>
                     <?php } ?>
                     </select>
             </div>
