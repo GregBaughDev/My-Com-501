@@ -22,6 +22,13 @@
         <h1>Edit page</h1>
     </div>
     <div class="edit-table">
+        <?php if(isset($_GET['msg'])) { ?>
+            <?php if($_GET['msg'] == 'dberr') { ?>
+                <h2>Error with the database - Please contact administrator</h2>
+            <?php } else if($_GET['msg'] == 'succ') { ?>
+                <h2>Item added sucessfully!</h2>
+            <?php } ?> 
+        <?php } ?>
         <table>
             <thead>
                 <tr>

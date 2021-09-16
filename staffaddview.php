@@ -22,43 +22,43 @@
         <h1>Add New Item</h1>
     </div>
     <section class="form-container">
-        <form action="./files/func/handleadd.php" method="POST">
+        <form action="./files/func/handleedit.php?id=<?php echo $item[0]['product_id'] ?>" method="POST">
             <label for="name">Product name</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" value="<?php echo $item[0]['name']?>">
             <div class="form-edit">
                 <label for="manufacturer">Manufacturer</label>
                     <select name="manufacturer">
                         <?php foreach($manuList as $man) { ?>
-                            <option value="<?php echo $man['manufacturer_id']?>"><?php echo $man['manufacturer'] ?></option>
+                            <option value="<?php echo $man['manufacturer_id']?>" <?php if($item[0]['manufacturer'] == $man['manufacturer']) { ?> selected <?php } ?>><?php echo $man['manufacturer'] ?></option>
                         <?php } ?>
                     </select>
             </div>
             <label for="price">Price</label>
-                <input type="text" name="price" id="price">
+                <input type="text" name="price" id="price" value="<?php echo $item[0]['price'] ?>">
             <div class="form-edit">
                 <label for="status">Status</label>
                     <select name="status" id="status">
-                        <option value="In Stock">In Stock</option>
-                        <option value="Previous Item">Previous Item</option>
+                        <option value="In Stock" <?php if($item[0]['status'] == 'In Stock') { ?> selected <?php } ?>>In Stock</option>
+                        <option value="Previous Item" <?php if($item[0]['status'] == 'Previous Item') { ?> selected <?php } ?>>Previous Item</option>
                     </select>
             </div>
             <div class="form-edit">
                 <label for="condition">Condition</label>
                     <select name="condition">
-                        <option value="New">New</option>
-                        <option value="Refurbished">Refurbished</option>
+                        <option value="New" <?php if($item[0]['condition'] == 'New') { ?> selected <?php } ?>>New</option>
+                        <option value="Refurbished" <?php if($item[0]['condition'] == 'Refurbished') { ?> selected <?php } ?>>Refurbished</option>
                     </select>
             </div>
             <div class="form-edit">
                 <label for="category">Category</label>
                     <select name="category">
                     <?php foreach($catList as $cat) { ?>
-                        <option value="<?php echo $cat['category_id']?>"><?php echo $cat['category'] ?></option>
+                        <option value="<?php echo $cat['category_id']?>" <?php if($item[0]['category'] == $cat['category']) { ?> selected <?php } ?>><?php echo $cat['category']?></option>
                     <?php } ?>
                     </select>
             </div>
             <label for="description">Description</label>
-                <textarea name="description" id="description"></textarea>
+                <textarea name="description" id="description"><?php echo $item[0]['description'] ?></textarea>
             <button type="submit">Submit</button>
         </form>
         <img class="view-img" src="./public/img/test.jpg" alt="Computer monitor">

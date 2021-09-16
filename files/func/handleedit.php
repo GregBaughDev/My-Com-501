@@ -59,13 +59,14 @@
             $updateItem->bindParam(":product_id", $_GET['id']);
             $updateItem->execute();
 
-            header("Location: ../../staffedit.php");
+            header("Location: ../../staffedit.php?msg=succ");
         } catch (PDOException $e) {
-            echo $e->getMessage();
+            header("Location: ../../staffedit.php?msg=dberr");
             error_log($e->getMessage(), 0);
         }
     } else {
-        echo "Error submitting to DB";
+        $_SESSION['errors'] = $formErrs;
+        // TO DO PASS ERRORS THROUGH TO ITEM EDIT PAGE   
     }
 
 ?>
