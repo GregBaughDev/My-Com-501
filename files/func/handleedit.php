@@ -36,9 +36,6 @@
     $_POST['price'] == 0 ? $formErrs['price'] = "Price must be greater than 0" : $price = sanitise('price', FILTER_SANITIZE_NUMBER_INT);
     $_POST['description'] == '' ? $formErrs['description'] = "Field must be completed" : $description = sanitise('description');
 
-    // TO DO - SORT OUT ERROR EDITING TO DB HERE
-    echo $name . $manufacturer . $price . $status . $condition . $category . $description;
-
     // Check that there are no errors in formErrs
     if(!$formErrs['name'] && !$formErrs['price'] && !$formErrs['description']){
         $formReady = true;
@@ -49,7 +46,7 @@
     if($formReady){
         try {
             $update = "UPDATE products SET name = :name, manufacturer = :manufacturer, price = :price,
-                status = :status, condition = :condition, category = :category, description = :description
+                `status` = :status, `condition` = :condition, category_id = :category, description = :description
                 WHERE product_id = :product_id";
             $updateItem = $conn->prepare($update);
             $updateItem->bindParam(":name", $name);
@@ -62,7 +59,7 @@
             $updateItem->bindParam(":product_id", $_GET['id']);
             $updateItem->execute();
 
-            header("Location: ../staffeditview.php");
+            header("Location: ../../staffedit.php");
         } catch (PDOException $e) {
             echo $e->getMessage();
             error_log($e->getMessage(), 0);
