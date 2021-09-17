@@ -26,7 +26,7 @@
             <?php if($_GET['msg'] == 'dberr') { ?>
                 <h2>Error with the database - Please contact administrator</h2>
             <?php } else if($_GET['msg'] == 'succ') { ?>
-                <h2>Item added sucessfully!</h2>
+                <h2>Item edited sucessfully!</h2>
             <?php } ?> 
         <?php } ?>
         <table>

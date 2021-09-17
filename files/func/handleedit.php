@@ -3,7 +3,6 @@
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/inc/conn.php');
 
     unset($_SESSION["errors"]);
-    unset($_SESSION["formErrs"]);
 
     // Array to handle errors
     $formErrs = [
@@ -11,6 +10,9 @@
         "price" => "",
         "description" => ""
     ];
+
+    // Variable to check if adding a new item or editing item
+    $addOrEdit = $_GET['action'];
 
     // Variables from form data
     $name = "";
@@ -39,11 +41,10 @@
     // Check that there are no errors in formErrs
     if(!$formErrs['name'] && !$formErrs['price'] && !$formErrs['description']){
         $formReady = true;
-    } else {
-        echo "Error in validation";
-    }
+    } 
 
-    if($formReady){
+    // Edit route
+    if($formReady && $addOrEdit == 'edit'){
         try {
             $update = "UPDATE products SET name = :name, manufacturer = :manufacturer, price = :price,
                 `status` = :status, `condition` = :condition, category_id = :category, description = :description
@@ -64,9 +65,34 @@
             header("Location: ../../staffedit.php?msg=dberr");
             error_log($e->getMessage(), 0);
         }
-    } else {
+    } else if(!$formReady && $addOrEdit == 'edit') {
         $_SESSION['errors'] = $formErrs;
-        // TO DO PASS ERRORS THROUGH TO ITEM EDIT PAGE   
+        header("Location: ../../staffeditview.php?id=" . $_GET['id']); 
+    }
+
+    // Add route
+    if($formReady && $addOrEdit == 'add'){
+        try {
+            $add = "INSERT INTO products (name, description, `condition`, category_id, `status`, price, manufacturer) 
+            VALUES (:name, :description, :condition, :category_id, :status, :price, :manufacturer)";
+            $addItem = $conn->prepare($add);
+            $addItem->bindParam(":name", $name);
+            $addItem->bindParam(":manufacturer", $manufacturer);
+            $addItem->bindParam(":price", $price);
+            $addItem->bindParam(":status", $status);
+            $addItem->bindParam(":condition", $condition);
+            $addItem->bindParam(":category_id", $category);
+            $addItem->bindParam(":description", $description);
+            $addItem->execute();
+
+            header("Location: ../../staffhome.php?msg=succ");
+        } catch (PDOException $e) {
+            header("Location: ../../staffhome.php?msg=dberr");
+            error_log($e->getMessage(), 0);
+        }
+    } else if(!$formReady && $addOrEdit == 'add'){
+        $_SESSION['errors'] = $formErrs;
+        header("Location: ../../staffadd.php"); 
     }
 
 ?>

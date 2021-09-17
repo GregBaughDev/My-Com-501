@@ -26,8 +26,8 @@
         <h1>Edit - <?php echo $item[0]['name'] ?></h1>
     </div>
     <section class="form-container">
-        <form action="./files/func/handleedit.php?id=<?php echo $item[0]['product_id'] ?>" method="POST">
-            <label for="name">Product name</label>
+        <form action="./files/func/handleedit.php?action=edit&id=<?php echo $item[0]['product_id'] ?>" method="POST">
+            <label for="name">Product name</label><?php if(isset($_SESSION['errors']['name'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['name'] ?></span> <?php } ?>
                 <input type="text" name="name" id="name" value="<?php echo $item[0]['name']?>">
             <div class="form-edit">
                 <label for="manufacturer">Manufacturer</label>
@@ -37,7 +37,7 @@
                         <?php } ?>
                     </select>
             </div>
-            <label for="price">Price</label>
+            <label for="price">Price</label><?php if(isset($_SESSION['errors']['price'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['price'] ?></span><?php } ?>
                 <input type="text" name="price" id="price" value="<?php echo $item[0]['price'] ?>">
             <div class="form-edit">
                 <label for="status">Status</label>
@@ -61,14 +61,18 @@
                     <?php } ?>
                     </select>
             </div>
-            <label for="description">Description</label>
+            <label for="description">Description</label><?php if(isset($_SESSION['errors']['description'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['description'] ?></span><?php } ?>
                 <textarea name="description" id="description"><?php echo $item[0]['description'] ?></textarea>
             <button type="submit">Submit</button>
+        </form>
+        <form action="./files/func/handledelete.php?id=<?php echo $item[0]['product_id'] ?>" method="POST">
+            <button type="submit">Delete Item</button>
         </form>
         <img class="view-img" src="./public/img/test.jpg" alt="Computer monitor">
     </div>
 </section>
 
 <?php
+    unset($_SESSION["errors"]);
     require_once('./files/inc/footer.php');
 ?>

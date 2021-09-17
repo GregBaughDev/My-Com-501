@@ -22,8 +22,8 @@
         <h1>Add New Item</h1>
     </div>
     <section class="form-container">
-        <form action="./files/func/handleadd.php" method="POST">
-            <label for="name">Product name</label>
+        <form action="./files/func/handleedit.php?action=add" method="POST">
+            <label for="name">Product name</label><?php if(isset($_SESSION['errors']['name'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['name'] ?></span> <?php } ?>
                 <input type="text" name="name" id="name">
             <div class="form-edit">
                 <label for="manufacturer">Manufacturer</label>
@@ -33,7 +33,7 @@
                         <?php } ?>
                     </select>
             </div>
-            <label for="price">Price</label>
+            <label for="price">Price</label><?php if(isset($_SESSION['errors']['price'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['price'] ?></span><?php } ?>
                 <input type="text" name="price" id="price">
             <div class="form-edit">
                 <label for="status">Status</label>
@@ -57,7 +57,7 @@
                     <?php } ?>
                     </select>
             </div>
-            <label for="description">Description</label>
+            <label for="description">Description</label><?php if(isset($_SESSION['errors']['description'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['description'] ?></span><?php } ?>
                 <textarea name="description" id="description"></textarea>
             <button type="submit">Submit</button>
         </form>
@@ -66,5 +66,6 @@
 </section>
 
 <?php
+    unset($_SESSION["errors"]);
     require_once('./files/inc/footer.php');
 ?>

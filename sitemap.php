@@ -28,7 +28,7 @@
             </li>
             <li><a href="./about.php">About</a></li>
             <li><a href="./contact.php">Contact</a></li>
-            <li><a href="./staff.php">Staff Area</a></li>
+            <li><a href="./staffhome.php">Staff Area</a></li>
         </ul>
     </div>
 </section>
