@@ -10,6 +10,8 @@
 -->
 <?php
     require_once('./files/inc/header.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
+    $randItem = rand(0, count($retrieveItems) - 1);
 ?>  
 
 <section id="hero">
@@ -18,9 +20,10 @@
 </section>
 <section id="featured-prod">
     <!-- Pull a random product from database for featured -->
-    <h2>Product Name</h2>
+    <h2><?php echo $retrieveItems[$randItem]['name']?></h2>
     <img src="./public/img/image1.jpg" alt="Inside of a computer with hard drive and fan">
-    <p>Product description</p>
+    <p><?php echo $retrieveItems[$randItem]['description']?></p>
+    <p><a href="./view.php?id=<?php echo $retrieveItems[$randItem]['product_id']?>">Link to item</a></p>
 </section>
 
 <?php

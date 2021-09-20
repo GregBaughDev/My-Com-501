@@ -12,12 +12,15 @@
     require_once('./files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/individualitem.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/categoryManu.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
+    
+    if($_GET['id'] > count($retrieveItems) + 1 || $_GET['id'] <= 0){
+        header("Location: ./staffedit.php");
+    }
 
     if(!$_SESSION['authenticate']){
         header("Location: ./staff.php");
     }
-
-    // TO DO: Invalid id entered, redirect to edit page
 
     $item = findItem($_GET['id'], $conn);
 ?>  

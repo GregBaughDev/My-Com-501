@@ -12,7 +12,9 @@
     require_once('./files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
 
-    // TO DO: Invalid id entered, redirect to home page
+    if($_GET['id'] > count($retrieveItems) + 1 || $_GET['id'] <= 0){
+        header("Location: ./products.php");
+    }
 
     foreach($retrieveItems as $item){
         if($item["product_id"] == $_GET["id"]){

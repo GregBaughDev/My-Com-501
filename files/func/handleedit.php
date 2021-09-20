@@ -91,7 +91,17 @@
             error_log($e->getMessage(), 0);
         }
     } else if(!$formReady && $addOrEdit == 'add'){
+        $currentData = [
+            "name" => $name,
+            "manufacturer" => $manufacturer,
+            "price" => $price,
+            "status" => $status,
+            "condition" => $condition,
+            "category" => $category,
+            "description" => $description,
+        ];
         $_SESSION['errors'] = $formErrs;
+        $_SESSION['current'] = $currentData;
         header("Location: ../../staffadd.php"); 
     }
 
