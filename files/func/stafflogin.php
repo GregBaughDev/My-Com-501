@@ -30,7 +30,7 @@
         if(count($usernameQuery) == 1){
             // SET SESSION AND REDIRECT TO STAFF PAGE
             $_SESSION['authenticate'] = true;
-            $_SESSION['role'] = $usernameQuery['user_role'];
+            $_SESSION['role'] = $usernameQuery[0]['user_role'];
             header("Location: ../../staffhome.php");
         } else {
             array_push($errors, "An account with these details cannot be found");

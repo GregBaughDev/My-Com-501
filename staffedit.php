@@ -12,7 +12,7 @@
     require_once('./files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
     
-    if(!$_SESSION['authenticate']){
+    if(!isset($_SESSION['authenticate'])){
         header("Location: ./staff.php");
     }
 ?>  

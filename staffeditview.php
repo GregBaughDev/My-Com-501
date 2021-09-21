@@ -18,7 +18,7 @@
         header("Location: ./staffedit.php");
     }
 
-    if(!$_SESSION['authenticate']){
+    if(!isset($_SESSION['authenticate'])){
         header("Location: ./staff.php");
     }
 
@@ -29,7 +29,7 @@
         <h1>Edit - <?php echo $item[0]['name'] ?></h1>
     </div>
     <section class="form-container">
-        <form action="./files/func/handleedit.php?action=edit&id=<?php echo $item[0]['product_id'] ?>" method="POST">
+        <form action="./files/func/handleedit.php?action=edit&id=<?php echo $item[0]['product_id'] ?>" method="POST" enctype="multipart/form-data">
             <label for="name">Product name</label><?php if(isset($_SESSION['errors']['name'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['name'] ?></span> <?php } ?>
                 <input type="text" name="name" id="name" value="<?php echo $item[0]['name']?>">
             <div class="form-edit">
@@ -42,6 +42,8 @@
             </div>
             <label for="price">Price</label><?php if(isset($_SESSION['errors']['price'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['price'] ?></span><?php } ?>
                 <input type="text" name="price" id="price" value="<?php echo $item[0]['price'] ?>">
+            <label for="image">Image</label>
+                <input type="file" name="image" id="image">
             <div class="form-edit">
                 <label for="status">Status</label>
                     <select name="status" id="status">
@@ -71,7 +73,6 @@
         <form action="./files/func/handledelete.php?id=<?php echo $item[0]['product_id'] ?>" method="POST">
             <button type="submit">Delete Item</button>
         </form>
-        <img class="view-img" src="./public/img/test.jpg" alt="Computer monitor">
     </div>
 </section>
 
