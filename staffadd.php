@@ -13,7 +13,7 @@
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/individualitem.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/categoryManu.php');
 
-    if(!$_SESSION['authenticate']){
+    if(!isset($_SESSION['authenticate'])){
         header("Location: ./staff.php");
     }
 ?>  
@@ -22,7 +22,7 @@
         <h1>Add New Item</h1>
     </div>
     <section class="form-container">
-        <form action="./files/func/handleedit.php?action=add" method="POST">
+        <form action="./files/func/handleedit.php?action=add" method="POST" enctype="multipart/form-data">
             <label for="name">Product name</label><?php if(isset($_SESSION['errors']['name'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['name'] ?></span> <?php } ?>
                 <input type="text" name="name" id="name" value="<?php if(isset($_SESSION['current'])) { echo $_SESSION['current']['name']; }?>">
             <div class="form-edit">
@@ -35,6 +35,8 @@
             </div>
             <label for="price">Price</label><?php if(isset($_SESSION['errors']['price'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['price'] ?></span><?php } ?>
                 <input type="text" name="price" id="price" value="<?php if(isset($_SESSION['current'])) { echo $_SESSION['current']['price']; } ?>">
+            <label for="image">Image</label><?php if(isset($_SESSION['errors']['image'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['image'] ?></span> <?php } ?>
+                <input type="file" name="image" id="image">
             <div class="form-edit">
                 <label for="status">Status</label>
                     <select name="status" id="status">

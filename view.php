@@ -28,7 +28,7 @@
     <div class="header-container">
         <h1><?php echo $currItem['name'] ?></h1>
         <h2><?php echo $currItem['manufacturer'] ?></h2>
-        <img class="view-img" src="./public/img/test.jpg" alt="Computer monitor">
+        <img class="view-img" src="./public/img/<?php echo $currItem['image']; ?>" alt="Image of <?php echo $currItem['name'] ?>">
         <h3>Price - $<?php echo $currItem['price'] ?></h3>
         <h4><?php echo $currItem['status'] ?></h4>
         <h5><?php echo $currItem['condition'] ?></h5>

@@ -21,10 +21,11 @@
 <section id="featured-prod">
     <!-- Pull a random product from database for featured -->
     <h2><?php echo $retrieveItems[$randItem]['name']?></h2>
-    <img src="./public/img/image1.jpg" alt="Inside of a computer with hard drive and fan">
+    <img src="./public/img/<?php echo $retrieveItems[$randItem]["image"]; ?>" alt="Image of <?php echo $retrieveItems[$randItem]["name"] ?>">
     <p><?php echo $retrieveItems[$randItem]['description']?></p>
     <p><a href="./view.php?id=<?php echo $retrieveItems[$randItem]['product_id']?>">Link to item</a></p>
 </section>
+<script src="./public/js/index.js"></script>
 
 <?php
     require_once('./files/inc/footer.php');

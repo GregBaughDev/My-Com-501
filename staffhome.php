@@ -11,7 +11,7 @@
 <?php
     require_once('./files/inc/header.php');
     
-    if(!$_SESSION['authenticate']){
+    if(!isset($_SESSION['authenticate'])){
         header("Location: ./staff.php");
     }
 ?>  

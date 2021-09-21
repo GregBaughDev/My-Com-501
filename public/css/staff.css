@@ -36,3 +36,10 @@
 .validation {
     color: #E5A01A;
 }
+
+/* Add product */
+form input[type=file] {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+}
