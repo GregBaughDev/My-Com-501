@@ -13,16 +13,16 @@
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/individualitem.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/categoryManu.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
-    
-    if($_GET['id'] > count($retrieveItems) + 1 || $_GET['id'] <= 0){
-        header("Location: ./staffedit.php");
-    }
 
     if(!isset($_SESSION['authenticate'])){
         header("Location: ./staff.php");
     }
 
     $item = findItem($_GET['id'], $conn);
+    
+    if(!$item){
+        header("Location: ./staffedit.php");
+    }
 ?>  
 <section class="flex">
     <div class="header-container">
