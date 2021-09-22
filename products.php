@@ -106,7 +106,7 @@
                 <div class="grid">
                     <?php for($i = 0; $i < count($filterProducts); $i++) { ?>
                         <div class="flex-product">
-                            <h2><a href="view.php?id=<?php echo $filterProducts[$i]["product_id"] ?>"><?php echo $filterProducts[$i]["name"] ?></a></h2>
+                            <h2><a href="view.php?id=<?php echo $i ?>"><?php echo $filterProducts[$i]["name"] ?></a></h2>
                             <div class="flex-row product-information">
                                 <img src="./public/img/<?php echo $filterProducts[$i]["image"]; ?>" alt="Image of <?php echo $filterProducts[$i]["name"] ?>">
                                 <div class="flex-column product-information-rt">
