@@ -1,6 +1,5 @@
 <!-- 
     Coding standards: My-Com HTML standards.pdf
-
     Colour reference:
         grey: #F6F6F6
         black: #000000
@@ -63,7 +62,6 @@
                 <textarea name="description" id="description"><?php if(isset($_SESSION['current'])) { echo $_SESSION['current']['description']; } ?></textarea>
             <button type="submit">Submit</button>
         </form>
-        <img class="view-img" src="./public/img/test.jpg" alt="Computer monitor">
     </div>
 </section>
 

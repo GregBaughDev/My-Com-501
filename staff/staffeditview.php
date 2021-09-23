@@ -1,6 +1,5 @@
 <!-- 
     Coding standards: My-Com HTML standards.pdf
-
     Colour reference:
         grey: #F6F6F6
         black: #000000

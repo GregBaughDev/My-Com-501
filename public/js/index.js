@@ -10,4 +10,4 @@ setInterval(() => {
         imgCount++;
     }
     heroImg.setAttribute('src', `./public/img/slider${imgCount}.jpg`)
-}, 5000);
+}, 3000);

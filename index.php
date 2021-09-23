@@ -19,7 +19,8 @@
     <img src="./public/img/slider3.jpg" alt="Inside of a computer">
 </section>
 <section id="featured-prod">
-    <h2><?php echo $retrieveItems[$randItem]['name']?></h2>
+    <h2>Featured Product</h2>
+    <h3><?php echo $retrieveItems[$randItem]['name']?></h3>
     <img src="./public/img/<?php echo $retrieveItems[$randItem]["image"]; ?>" alt="Image of <?php echo $retrieveItems[$randItem]["name"] ?>">
     <p><?php echo $retrieveItems[$randItem]['description']?></p>
     <p><a href="./view.php?id=<?php echo $randItem ?>">Link to item</a></p>

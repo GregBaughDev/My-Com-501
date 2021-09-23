@@ -143,19 +143,26 @@ a > img {
 /* Featured product */
 #featured-prod {
     display: flex;
-    width: 80vw;
-    height: 50vh;
+    width: 100%;
+    height: auto;
     flex-direction: column;
-    margin: 0 auto;
-    padding: 5vh 0;
+    margin: 4vh auto;
+    padding: 2vh 0;
     align-items: center;
     justify-content: space-between;
+    background-color: #F6F6F6;
 }
 
 #featured-prod img {
     object-fit: cover;
     width: 80%;
-    max-height: 80%;
+    max-height: 40vh;
+    margin-bottom: 2vh;
+}
+
+#featured-prod h2 {
+    color: #927DE8;
+    margin-bottom: 2vh;
 }
 
 /****************************
@@ -170,7 +177,7 @@ a > img {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     /* Header - media queries*/
     header > div {
         flex-direction: column;

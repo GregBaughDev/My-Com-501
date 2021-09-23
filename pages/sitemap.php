@@ -19,7 +19,6 @@
     <div class="flex-column">
         <ul>
             <li><a href="./index.php">Home</a></li>
-            <!-- add product links in -->
             <li><a href="./products.php">Products</a>
                 <ul>
                     <li><a href="./products.php?curr">Current Products</a></li>
