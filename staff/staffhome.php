@@ -9,7 +9,7 @@
         purple: #927DE8
 -->
 <?php
-    require_once('./files/inc/header.php');
+    require_once('../files/inc/header.php');
     
     if(!isset($_SESSION['authenticate'])){
         header("Location: ./staff.php");
@@ -36,5 +36,5 @@
 </section>
 
 <?php
-    require_once('./files/inc/footer.php');
+    require_once('../files/inc/footer.php');
 ?>

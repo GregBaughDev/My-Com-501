@@ -9,7 +9,7 @@
         purple: #927DE8
 -->
 <?php
-    require_once('./files/inc/header.php');
+    require_once('../files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
 
     if($_GET['id'] >= count($retrieveItems) || $_GET['id'] < 0){
@@ -23,7 +23,7 @@
     <div class="header-container">
         <h1><?php echo $currItem['name'] ?></h1>
         <h2><?php echo $currItem['manufacturer'] ?></h2>
-        <img class="view-img" src="./public/img/<?php echo $currItem['image']; ?>" alt="Image of <?php echo $currItem['name'] ?>">
+        <img class="view-img" src="../public/img/<?php echo $currItem['image']; ?>" alt="Image of <?php echo $currItem['name'] ?>">
         <h3>Price - $<?php echo $currItem['price'] ?></h3>
         <h4><?php echo $currItem['status'] ?></h4>
         <h5><?php echo $currItem['condition'] ?></h5>
@@ -32,5 +32,5 @@
 </section>
 
 <?php
-    require_once('./files/inc/footer.php');
+    require_once('../files/inc/footer.php');
 ?>

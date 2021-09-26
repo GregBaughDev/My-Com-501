@@ -31,11 +31,11 @@
             // SET SESSION AND REDIRECT TO STAFF PAGE
             $_SESSION['authenticate'] = true;
             $_SESSION['role'] = $usernameQuery[0]['user_role'];
-            header("Location: ../../staffhome.php");
+            header("Location: ../../staff/staffhome.php");
         } else {
             array_push($errors, "An account with these details cannot be found");
             $_SESSION['errors'] = $errors;
-            header("Location: ../../staff.php");
+            header("Location: ../../staff/staff.php");
         }
     
     } catch (PDOException $e) {

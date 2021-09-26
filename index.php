@@ -23,7 +23,7 @@
     <h3><?php echo $retrieveItems[$randItem]['name']?></h3>
     <img src="./public/img/<?php echo $retrieveItems[$randItem]["image"]; ?>" alt="Image of <?php echo $retrieveItems[$randItem]["name"] ?>">
     <p><?php echo $retrieveItems[$randItem]['description']?></p>
-    <p><a href="./view.php?id=<?php echo $randItem ?>">Link to item</a></p>
+    <p><a href="./pages/view.php?id=<?php echo $randItem ?>">Link to item</a></p>
 </section>
 <script src='./public/js/index.js'></script>
 

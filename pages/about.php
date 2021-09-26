@@ -9,7 +9,7 @@
         purple: #927DE8
 -->
 <?php
-    require_once('./files/inc/header.php');
+    require_once('../files/inc/header.php');
 ?>  
 
 <section class="flex">
@@ -71,5 +71,5 @@
 </section>
 
 <?php
-    require_once('./files/inc/footer.php');
+    require_once('../files/inc/footer.php');
 ?>

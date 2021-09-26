@@ -8,7 +8,7 @@
         purple: #927DE8
 -->
 <?php
-    require_once('./files/inc/header.php');
+    require_once('../files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/filterSearch.php');
 ?>  
@@ -67,7 +67,7 @@
                         <div class="flex-product">
                             <h2><a href="view.php?id=<?php echo $i ?>"><?php echo $filterProducts[$i]["name"] ?></a></h2>
                             <div class="flex-row product-information">
-                                <img src="./public/img/<?php echo $filterProducts[$i]["image"]; ?>" alt="Image of <?php echo $filterProducts[$i]["name"] ?>">
+                                <img src="../public/img/<?php echo $filterProducts[$i]["image"]; ?>" alt="Image of <?php echo $filterProducts[$i]["name"] ?>">
                                 <div class="flex-column product-information-rt">
                                     <h3>$<?php echo $filterProducts[$i]['price'] ?></h3>
                                     <h4><?php echo $filterProducts[$i]['status'] ?></h4>
@@ -87,5 +87,5 @@
 </section>
 
 <?php
-    require_once('./files/inc/footer.php');
+    require_once('../files/inc/footer.php');
 ?>

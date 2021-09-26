@@ -25,14 +25,14 @@
 <body>
 <header>
     <div>
-        <a href="./index.php"><img src="/Diploma/501/www/public/img/logo.svg" alt="My Com logo"></a>
+        <a href="../index.php"><img src="/Diploma/501/www/public/img/logo.svg" alt="My Com logo"></a>
         <nav>
-            <a href="./products.php">Products</a>
-            <a href="./about.php">About</a>
-            <a href="./contact.php">Contact</a>
-            <a href="./staffhome.php">Staff Area</a>
+            <a href="/Diploma/501/www/pages/products.php">Products</a>
+            <a href="/Diploma/501/www/pages/about.php">About</a>
+            <a href="/Diploma/501/www/pages/contact.php">Contact</a>
+            <a href="/Diploma/501/www/staff/staffhome.php">Staff Area</a>
             <?php if(isset($_SESSION['authenticate'])) { ?>
-                <a href="./files/func/stafflogout.php">Log Out</a>
+                <a href="/Diploma/501/www/files/func/stafflogout.php">Log Out</a>
             <?php } ?>
         </nav>
     </div>

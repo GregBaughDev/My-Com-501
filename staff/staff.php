@@ -9,7 +9,7 @@
         purple: #927DE8
 -->
 <?php
-    require_once('./files/inc/header.php');
+    require_once('../files/inc/header.php');
 ?>  
 
 <section class="flex">
@@ -23,7 +23,7 @@
             <?php }
             unset($_SESSION['errors']);
         } ?>
-        <form action="./files/func/stafflogin.php" method="POST">
+        <form action="../files/func/stafflogin.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
             <label for="password">Password:</label>
@@ -34,5 +34,5 @@
 </section>
 
 <?php
-    require_once('./files/inc/footer.php');
+    require_once('../files/inc/footer.php');
 ?>
