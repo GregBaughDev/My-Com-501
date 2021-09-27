@@ -25,7 +25,7 @@
 <body>
 <header>
     <div>
-        <a href="../index.php"><img src="/Diploma/501/www/public/img/logo.svg" alt="My Com logo"></a>
+        <a href="/Diploma/501/www/index.php"><img src="/Diploma/501/www/public/img/logo.svg" alt="My Com logo"></a>
         <nav>
             <a href="/Diploma/501/www/pages/products.php">Products</a>
             <a href="/Diploma/501/www/pages/about.php">About</a>

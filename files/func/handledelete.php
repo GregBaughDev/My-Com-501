@@ -8,9 +8,9 @@
         $deleteItem->bindParam(":product_id", $_GET['id']);
         $deleteItem->execute();
 
-        header("Location: ../../staffhome.php?msg=del");
+        header("Location: ../../staff/staffhome.php?msg=del");
     } catch (PDOException $e) {
-        header("Location: ../../staffhome.php?msg=dberr");
+        header("Location: ../../staff/staffhome.php?msg=dberr");
         error_log($e->getMessage(), 0);
     }
 ?>

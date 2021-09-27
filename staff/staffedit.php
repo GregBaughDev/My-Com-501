@@ -9,7 +9,7 @@
         purple: #927DE8
 -->
 <?php
-    require_once('./files/inc/header.php');
+    require_once('../files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
     
     if(!isset($_SESSION['authenticate'])){
@@ -57,5 +57,5 @@
 </section>
 
 <?php
-    require_once('./files/inc/footer.php');
+    require_once('../files/inc/footer.php');
 ?>

@@ -24,7 +24,7 @@
             <?php }
             unset($_SESSION['errors']);
         } ?>
-        <form action="./files/func/contact.php" method="POST">
+        <form action="../files/func/contact.php" method="POST">
             <label for="name">Name: *</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
             <label for="email">Email: *</label>

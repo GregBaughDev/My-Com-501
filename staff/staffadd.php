@@ -8,7 +8,7 @@
         purple: #927DE8
 -->
 <?php
-    require_once('./files/inc/header.php');
+    require_once('../files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/individualitem.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/categoryManu.php');
 
@@ -21,7 +21,7 @@
         <h1>Add New Item</h1>
     </div>
     <section class="form-container">
-        <form action="./files/func/handleedit.php?action=add" method="POST" enctype="multipart/form-data">
+        <form action="../files/func/handleedit.php?action=add" method="POST" enctype="multipart/form-data">
             <label for="name">Product name</label><?php if(isset($_SESSION['errors']['name'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['name'] ?></span> <?php } ?>
                 <input type="text" name="name" id="name" value="<?php if(isset($_SESSION['current'])) { echo $_SESSION['current']['name']; }?>">
             <div class="form-edit">
@@ -68,5 +68,5 @@
 <?php
     unset($_SESSION['errors']);
     unset($_SESSION['current']);
-    require_once('./files/inc/footer.php');
+    require_once('../files/inc/footer.php');
 ?>

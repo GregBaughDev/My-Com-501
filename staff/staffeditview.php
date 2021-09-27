@@ -8,7 +8,7 @@
         purple: #927DE8
 -->
 <?php
-    require_once('./files/inc/header.php');
+    require_once('../files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/individualitem.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/categoryManu.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
@@ -28,7 +28,7 @@
         <h1>Edit - <?php echo $item[0]['name'] ?></h1>
     </div>
     <section class="form-container">
-        <form action="./files/func/handleedit.php?action=edit&id=<?php echo $item[0]['product_id'] ?>" method="POST" enctype="multipart/form-data">
+        <form action="../files/func/handleedit.php?action=edit&id=<?php echo $item[0]['product_id'] ?>" method="POST" enctype="multipart/form-data">
             <label for="name">Product name</label><?php if(isset($_SESSION['errors']['name'])) { ?> <span class="validation"><?php echo $_SESSION['errors']['name'] ?></span> <?php } ?>
                 <input type="text" name="name" id="name" value="<?php echo $item[0]['name']?>">
             <div class="form-edit">
@@ -69,7 +69,7 @@
                 <textarea name="description" id="description"><?php echo $item[0]['description'] ?></textarea>
             <button type="submit">Submit</button>
         </form>
-        <form action="./files/func/handledelete.php?id=<?php echo $item[0]['product_id'] ?>" method="POST">
+        <form action="../files/func/handledelete.php?id=<?php echo $item[0]['product_id'] ?>" method="POST">
             <button type="submit">Delete Item</button>
         </form>
     </div>
@@ -77,5 +77,5 @@
 
 <?php
     unset($_SESSION["errors"]);
-    require_once('./files/inc/footer.php');
+    require_once('../files/inc/footer.php');
 ?>

@@ -12,11 +12,11 @@
     if($formInfo["name"] == "" || $formInfo["email"] == "" || $formInfo["message"] == ""){
         array_push($errors, "All fields must be completed");
         $_SESSION["errors"] = $errors;
-        header("Location: ../../contact.php");
+        header("Location: ../../pages/contact.php");
     } else {
         // Confirmation messaged through in errors array for brevity in dev mode
         array_push($errors, "Thank you! Your message has been submitted");
         $_SESSION["errors"] = $errors;
-        header("Location: ../../contact.php");
+        header("Location: ../../pages/contact.php");
     }
 ?>

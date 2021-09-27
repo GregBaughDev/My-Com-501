@@ -78,9 +78,9 @@
                 $updateItem->bindParam(":product_id", $_GET['id']);
                 $updateItem->execute();
     
-                header("Location: ../../staffedit.php?msg=succ");
+                header("Location: ../../staff/staffedit.php?msg=succ");
             } catch (PDOException $e) {
-                header("Location: ../../staffedit.php?msg=dberr");
+                header("Location: ../../staff/staffedit.php?msg=dberr");
                 error_log($e->getMessage(), 0);
             }
         } else {
@@ -100,15 +100,15 @@
                 $updateItem->bindParam(":product_id", $_GET['id']);
                 $updateItem->execute();
     
-                header("Location: ../../staffedit.php?msg=succ");
+                header("Location: ../../staff/staffedit.php?msg=succ");
             } catch (PDOException $e) {
-                header("Location: ../../staffedit.php?msg=dberr");
+                header("Location: ../../staff/staffedit.php?msg=dberr");
                 error_log($e->getMessage(), 0);
             }
         }
     } else if(!$formReady && $addOrEdit == 'edit') {
         $_SESSION['errors'] = $formErrs;
-        header("Location: ../../staffeditview.php?id=" . $_GET['id']); 
+        header("Location: ../../staff/staffeditview.php?id=" . $_GET['id']); 
     }
 
     // Add route
@@ -127,9 +127,9 @@
             $addItem->bindParam(":image", $image);
             $addItem->execute();
 
-            header("Location: ../../staffhome.php?msg=succ");
+            header("Location: ../../staff/staffhome.php?msg=succ");
         } catch (PDOException $e) {
-            header("Location: ../../staffhome.php?msg=dberr");
+            header("Location: ../../staff/staffhome.php?msg=dberr");
             error_log($e->getMessage(), 0);
         }
     } else if(!$formReady && $addOrEdit == 'add'){
@@ -144,7 +144,7 @@
         ];
         $_SESSION['errors'] = $formErrs;
         $_SESSION['current'] = $currentData;
-        header("Location: ../../staffadd.php"); 
+        header("Location: ../../staff/staffadd.php"); 
     }
 
 ?>
