@@ -12,11 +12,15 @@
     require_once('../files/inc/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Diploma/501/www/files/func/itemretrieve.php');
 
-    if($_GET['id'] >= count($retrieveItems) || $_GET['id'] < 0){
-        header("Location: ./products.php");
+    foreach($retrieveItems as $item) {
+        if($item['product_id'] == $_GET['id']){
+            $currItem = $item;
+        }
     }
 
-    $currItem = $retrieveItems[$_GET['id']]
+    if(!$currItem){
+        header("Location: ./products.php");
+    }
 ?>  
 
 <section class="flex">
