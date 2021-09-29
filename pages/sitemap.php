@@ -18,7 +18,7 @@
     </div>
     <div class="flex-column">
         <ul>
-            <li><a href="./index.php">Home</a></li>
+            <li><a href="../index.php">Home</a></li>
             <li><a href="./products.php">Products</a>
                 <ul>
                     <li><a href="./products.php?curr">Current Products</a></li>
@@ -27,7 +27,7 @@
             </li>
             <li><a href="./about.php">About</a></li>
             <li><a href="./contact.php">Contact</a></li>
-            <li><a href="./staffhome.php">Staff Area</a></li>
+            <li><a href="../staff/staffhome.php">Staff Area</a></li>
         </ul>
     </div>
 </section>

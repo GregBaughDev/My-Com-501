@@ -18,7 +18,7 @@
         }
     }
 
-    if(!$currItem){
+    if(!$currItem) {
         header("Location: ./products.php");
     }
 ?>  
